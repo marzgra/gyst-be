@@ -8,6 +8,8 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.ProblemDetail;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @AllArgsConstructor
 public class GoalService {

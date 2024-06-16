@@ -13,8 +13,8 @@ import org.springframework.web.bind.annotation.RestController;
 public class GoalsController {
     private final GoalService goalService;
 
-    @PostMapping("/yearly/add")
-    public ResponseEntity<GoalDto> createYearlyGoal(@RequestBody GoalDto goalDto) {
+    @PostMapping("/goal/create")
+    public ResponseEntity<GoalDto> createGoal(@RequestBody GoalDto goalDto) {
         return ResponseEntity.ok(goalService.createGoal(goalDto));
     }
 }
