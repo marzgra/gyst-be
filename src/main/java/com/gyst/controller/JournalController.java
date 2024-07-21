@@ -1,20 +1,20 @@
 package com.gyst.controller;
 
-import com.gyst.dto.GoalDto;
-import com.gyst.service.GoalService;
+import com.gyst.dto.JournalDto;
+import com.gyst.service.JournalService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
-@RestController("/goals")
+@RestController("/journal")
 @AllArgsConstructor
-public class GoalsController {
-    private final GoalService goalService;
+public class JournalController {
+    private final JournalService journalService;
 
     @PostMapping("/create")
-    public ResponseEntity<GoalDto> createGoal(@RequestBody GoalDto goalDto) {
-        return ResponseEntity.ok(goalService.createGoal(goalDto));
+    public ResponseEntity<JournalDto> createEntry(@RequestBody JournalDto journalDto) {
+        return ResponseEntity.ok(journalService.createEntry(journalDto));
     }
 }

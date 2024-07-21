@@ -5,10 +5,7 @@ import com.gyst.entity.Goal;
 import com.gyst.mapper.GoalMapper;
 import com.gyst.repository.GoalRepository;
 import lombok.AllArgsConstructor;
-import org.springframework.http.ProblemDetail;
 import org.springframework.stereotype.Service;
-
-import java.util.List;
 
 @Service
 @AllArgsConstructor
