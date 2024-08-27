@@ -31,5 +31,5 @@ public class Goal {
     private List<Goal> subGoals;
 
     @ManyToOne
-    private User author;
+    private Account author;
 }

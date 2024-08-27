@@ -4,8 +4,7 @@ import com.gyst.dto.GoalDto;
 import com.gyst.entity.Goal;
 import org.mapstruct.Mapper;
 
-@Mapper
-public interface GoalMapper {
+@Mapper(componentModel = "spring")public interface GoalMapper {
 
     Goal toEntity(GoalDto goalDto);
 

@@ -11,13 +11,14 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDateTime;
 import java.util.List;
 
-@RestController("/journal")
+@RestController
+@RequestMapping("/journal")
 @AllArgsConstructor
 public class JournalController {
 
     private JournalService journalService;
 
-    @GetMapping
+    @GetMapping("/all")
     public ResponseEntity<List<JournalDto>> getAllJournals() {
         return ResponseEntity.ok(journalService.getAllJournals());
     }

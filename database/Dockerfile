@@ -1,0 +1,7 @@
+FROM postgres:15
+
+ENV POSTGRES_DB=gyst_db
+ENV POSTGRES_USER=dev
+ENV POSTGRES_PASSWORD=password
+
+

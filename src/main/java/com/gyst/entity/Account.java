@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @Table
 @NoArgsConstructor
 @Data
-public class User {
+public class Account {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
