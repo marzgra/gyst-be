@@ -1,18 +1,34 @@
 version: "3"
 services:
-  db:
+  backend:
+    build:
+      context: ../
+      dockerfile: Dockerfile
+    ports:
+      - "8080:8080"
+    environment:
+      - DB_HOST=postgres
+      - DB_PORT=5432
+      - DB_NAME=gyst_db
+      - DB_USER=dev
+      - DB_PASSWORD=password
+    depends_on:
+      - postgres
+
+  postgres:
     image: "postgres:15"
     container_name: "gyst_postgres"
     build:
       context: .
-      dockerfile: Dockerfile
+      dockerfile: database.Dockerfile
     environment:
+      - POSTGRES_DB=gyst_db
+      - POSTGRES_USER=dev
       - POSTGRES_PASSWORD=password
     ports:
-      - "54320:5432"
+      - "5432:5432"
     volumes:
-      - my_dbdata:/var/lib/postgresql/data
-      - my_dbbackup:/backups
+      - pgdata:/var/lib/postgresql/data
+
 volumes:
-  my_dbdata:
-  my_dbbackup:
+  pgdata:
