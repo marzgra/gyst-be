@@ -16,12 +16,9 @@ public class JournalEntry {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
     private Long id;
 
-    @Column
     private String entry;
 
-    @Column
     private LocalDateTime creationDate;
 }

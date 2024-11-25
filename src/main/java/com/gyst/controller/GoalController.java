@@ -10,11 +10,12 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController("/goals")
 @AllArgsConstructor
-public class GoalsController {
+public class GoalController {
     private final GoalService goalService;
 
     @PostMapping("/create")
     public ResponseEntity<GoalDto> createGoal(@RequestBody GoalDto goalDto) {
         return ResponseEntity.ok(goalService.createGoal(goalDto));
     }
+
 }

@@ -15,16 +15,13 @@ public class Goal {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
     private Long id;
 
-    @Column
     private String goalName;
 
-    @Column
     private LocalDate deadline;
 
-    @Column
+    @Enumerated(EnumType.STRING)
     private GoalType type;
 
     @OneToMany
@@ -32,4 +29,14 @@ public class Goal {
 
     @ManyToOne
     private Account author;
+
+    @Enumerated(EnumType.STRING)
+    private GoalStatus status;
+
+    private int completedTasks;
+    private int plannedTasks;
+
+    private int daysLeft;
+
+    private String color;
 }

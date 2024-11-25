@@ -13,4 +13,9 @@ public class GoalDto {
     private LocalDateTime deadline;
     private GoalType type;
     private List<GoalDto> subGoals;
+    private int completedTasks;
+    private int plannedTasks;
+    private int daysLeft;
+    private String status;
+    private String color;
 }

@@ -13,29 +13,23 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class UserHabit {
+public class Habit {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column
     private Long id;
 
-    @Column
     private String name;
 
-    @Column
     private String description;
 
     @OneToOne
     private Account user;
 
-    @Column
     private LocalDate startDate;
 
-    @Column
     private LocalDate endDate;
 
-    @Column
     private Boolean isArchived;
 
     @OneToMany
