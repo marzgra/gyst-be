@@ -16,7 +16,7 @@ public class TaskService {
     private final TaskMapper taskMapper;
 
     public List<TaskDto> getTasksForToday() {
-        List<Task> tasks = taskRepository.findByStatus(false);
+        List<Task> tasks = taskRepository.findByIsDone(false);
         return tasks.stream().map(taskMapper::toDto).toList();
     }
 }

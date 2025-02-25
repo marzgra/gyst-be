@@ -8,5 +8,5 @@ import java.util.List;
 
 @Repository
 public interface TaskRepository extends JpaRepository<Task, Long> {
-    List<Task> findByStatus(Boolean isDone);
+    List<Task> findByIsDone(Boolean isDone);
 }
