@@ -1,6 +1,7 @@
 package com.gyst.controller;
 
 import com.gyst.dto.JournalDto;
+import com.gyst.entity.Mood;
 import com.gyst.service.JournalService;
 import lombok.AllArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -9,6 +10,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.time.LocalDateTime;
+import java.util.Arrays;
 import java.util.List;
 
 @RestController
@@ -21,6 +23,11 @@ public class JournalController {
     @GetMapping("/all")
     public ResponseEntity<List<JournalDto>> getAllJournals() {
         return ResponseEntity.ok(journalService.getAllJournals());
+    }
+
+    @GetMapping("/moods")
+    public ResponseEntity<List<Mood>> getMoods() {
+        return ResponseEntity.ok(Arrays.asList(Mood.values()));
     }
 
     @GetMapping("/{id}")

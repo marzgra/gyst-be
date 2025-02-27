@@ -21,4 +21,6 @@ public class JournalEntry {
     private String entry;
 
     private LocalDateTime creationDate;
+
+    private String moods;
 }
