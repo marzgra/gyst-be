@@ -1,4 +1,9 @@
-To run the application:
-1. Firstly build the JAR by running mvn clean install in the main project directory
-2. navigate to database dir
-3. run docker-compose up --build 
+To run the application locally:
+1. In the root directory, run:
+   ```bash
+   docker build -f Dockerfile-local -t gyst-app .
+   ```
+2. Then run:
+   ```bash
+    docker run -p 8080:8080 gyst-app
+    ```
