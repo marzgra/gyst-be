@@ -1,0 +1,9 @@
+scalar Long
+
+type Query {
+    dummyQuery: String
+}
+
+type Mutation {
+    createUser(email: String!, name: String!): Long!
+}
