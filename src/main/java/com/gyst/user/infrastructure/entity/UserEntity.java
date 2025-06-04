@@ -1,4 +1,4 @@
-package com.gyst.infrastructure.user.entity;
+package com.gyst.user.infrastructure.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

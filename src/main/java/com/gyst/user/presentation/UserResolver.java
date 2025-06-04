@@ -1,6 +1,6 @@
-package com.gyst.presentation.user;
+package com.gyst.user.presentation;
 
-import com.gyst.application.user.RegisterUserUseCase;
+import com.gyst.user.application.RegisterUserUseCase;
 import lombok.RequiredArgsConstructor;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;

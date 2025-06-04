@@ -1,7 +1,8 @@
 package com.gyst.presentation.user;
 
-import com.gyst.application.user.RegisterUserUseCase;
+import com.gyst.user.application.RegisterUserUseCase;
 import com.gyst.config.GraphQlConfig;
+import com.gyst.user.presentation.UserResolver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

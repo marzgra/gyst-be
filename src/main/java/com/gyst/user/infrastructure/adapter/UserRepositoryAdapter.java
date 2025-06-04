@@ -1,9 +1,9 @@
-package com.gyst.infrastructure.user.adapter;
+package com.gyst.user.infrastructure.adapter;
 
-import com.gyst.domain.user.model.User;
-import com.gyst.domain.user.repository.UserRepository;
-import com.gyst.infrastructure.user.entity.UserEntity;
-import com.gyst.infrastructure.user.repository.JpaUserRepository;
+import com.gyst.user.domain.model.User;
+import com.gyst.user.domain.repository.UserRepository;
+import com.gyst.user.infrastructure.entity.UserEntity;
+import com.gyst.user.infrastructure.repository.JpaUserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
