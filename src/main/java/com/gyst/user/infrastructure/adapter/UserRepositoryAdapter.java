@@ -1,5 +1,6 @@
 package com.gyst.user.infrastructure.adapter;
 
+import com.gyst.user.domain.mapper.UserMapper;
 import com.gyst.user.domain.model.User;
 import com.gyst.user.domain.repository.UserRepository;
 import com.gyst.user.infrastructure.entity.UserEntity;
@@ -18,38 +19,24 @@ import java.util.Optional;
 public class UserRepositoryAdapter implements UserRepository {
 
     private final JpaUserRepository jpaRepo;
+    private final UserMapper mapper;
 
     @Override
     public User save(User user) {
-        UserEntity savedUser = jpaRepo.save(toEntity(user));
-        return toDomain(savedUser);
+        UserEntity savedUser = jpaRepo.save(mapper.toEntity(user));
+        return mapper.toDomain(savedUser);
     }
 
     @Override
     public Optional<User> findById(Long id) {
         return jpaRepo.findById(id)
-                .map(this::toDomain);
+                .map(mapper::toDomain);
     }
 
     @Override
     public Optional<User> findByEmail(String email) {
         return jpaRepo.findByEmail(email)
-                .map(this::toDomain);
-    }
-
-    private UserEntity toEntity(User user) {
-        return UserEntity.builder()
-                .email(user.getEmail())
-                .name(user.getName())
-                .build();
-    }
-
-    private User toDomain(UserEntity entity) {
-        return User.builder()
-                .id(entity.getId())
-                .email(entity.getEmail())
-                .name(entity.getName())
-                .build();
+                .map(mapper::toDomain);
     }
 }
 

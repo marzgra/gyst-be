@@ -23,6 +23,8 @@ spring:
         format_sql: true
 
 graphql:
+  graphiql:
+    enabled: true
   servlet:
     mapping: /graphql
     enabled: true

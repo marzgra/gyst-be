@@ -5,5 +5,9 @@ type Query {
 }
 
 type Mutation {
+    #user
     createUser(email: String!, name: String!): Long!
+
+    #goal
+    createGoal(userId: Long!, title: String!, description: String, deadline: String, type: String!): Long!
 }

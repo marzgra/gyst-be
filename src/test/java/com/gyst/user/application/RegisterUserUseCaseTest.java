@@ -1,8 +1,7 @@
-package com.gyst.application.user;
+package com.gyst.user.application;
 
 import com.gyst.user.domain.model.User;
 import com.gyst.user.domain.repository.UserRepository;
-import com.gyst.user.application.RegisterUserUseCase;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 

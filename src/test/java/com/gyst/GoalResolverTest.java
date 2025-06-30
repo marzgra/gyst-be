@@ -1,8 +1,8 @@
-package com.gyst.presentation.user;
+package com.gyst;
 
-import com.gyst.user.application.RegisterUserUseCase;
 import com.gyst.config.GraphQlConfig;
-import com.gyst.user.presentation.UserResolver;
+import com.gyst.goal.application.CreateGoalUseCase;
+import com.gyst.goal.presentation.GoalResolver;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -14,32 +14,31 @@ import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import static com.gyst.TestConstants.*;
 
-@GraphQlTest(UserResolver.class)
+@GraphQlTest(GoalResolver.class)
 @Import(GraphQlConfig.class)
-class UserResolverTest {
+public class GoalResolverTest {
 
     @Autowired
     private GraphQlTester graphQlTester;
 
     @MockitoBean
-    private RegisterUserUseCase registerUserUseCase;
+    private CreateGoalUseCase createGoalUseCase;
 
     @Test
-    void shouldReturnUserId() {
+    public void shouldCreateGoal() {
         // given
-        Mockito.when(registerUserUseCase.register(USER_EMAIL, USER_NAME))
-                .thenReturn(USER_ID);
+        Mockito.when(createGoalUseCase.createGoal(USER_ID, GOAL_NAME, GOAL_DESC, GOAL_DEADLINE, GOAL_TYPE))
+                .thenReturn(GOAL_ID);
 
         // when + then
         graphQlTester.document("""
                         mutation {
-                            createUser(name: "%s", email: "%s")
+                            createGoal(userId: "%s", title: "%s", description: "%s", deadline: "%s", type: "%s")
                         }
-                        """.formatted(USER_NAME, USER_EMAIL))
+                        """.formatted(USER_ID, GOAL_NAME, GOAL_DESC, GOAL_DEADLINE, GOAL_TYPE))
                 .execute()
-                .path("createUser")
+                .path("createGoal")
                 .entity(Long.class)
-                .satisfies(id -> Assertions.assertEquals(USER_ID, id));
+                .satisfies(id -> Assertions.assertEquals(GOAL_ID, id));
     }
 }
-
