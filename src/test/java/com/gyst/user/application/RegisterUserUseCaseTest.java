@@ -9,10 +9,10 @@ import static com.gyst.TestConstants.*;
 import static org.junit.jupiter.api.Assertions.*;
 import static org.mockito.ArgumentMatchers.any;
 
-class RegisterUserUseCaseTest {
+public class RegisterUserUseCaseTest {
 
     @Test
-    void shouldRegisterUserAndReturnId() {
+    public void shouldRegisterUserAndReturnId() {
         // given
         UserRepository mockRepo = Mockito.mock(UserRepository.class);
         User savedUser = User.builder().id(USER_ID).name(USER_NAME).email(USER_EMAIL).build();

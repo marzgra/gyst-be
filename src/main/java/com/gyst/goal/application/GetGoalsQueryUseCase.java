@@ -9,11 +9,14 @@ import java.util.List;
 
 @Service
 @RequiredArgsConstructor
-public class GetGoalsQuery {
+public class GetGoalsQueryUseCase {
 
     private final GoalRepository repository;
 
     public List<Goal> getGoalsByUserId(Long userId) {
+        if (userId == null) {
+            throw new IllegalArgumentException("User ID cannot be null");
+        }
         return repository.findByUserId(userId);
     }
 }

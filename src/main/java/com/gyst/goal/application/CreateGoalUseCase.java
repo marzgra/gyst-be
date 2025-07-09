@@ -15,7 +15,7 @@ public class CreateGoalUseCase {
 
     private final GoalRepository repository;
 
-    public Long createGoal(Long userId, String title, String description, String deadline, String type) {
+    public Goal createGoal(Long userId, String title, String description, String deadline, String type) {
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         final LocalDate deadlineFormatted = LocalDate.parse(deadline, formatter);
         Goal goal = new Goal(
@@ -25,7 +25,6 @@ public class CreateGoalUseCase {
                 deadlineFormatted,
                 GoalType.valueOf(type)
         );
-        Goal savedGoal = repository.save(goal);
-        return savedGoal.getId();
+        return repository.save(goal);
     }
 }

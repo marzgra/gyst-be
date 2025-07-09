@@ -19,6 +19,7 @@ public class GoalEntity {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @ManyToOne
     private Long userId;
     private String title;
     private String description;

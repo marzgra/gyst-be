@@ -1,9 +1,6 @@
-To run the application locally:
-1. In the root directory, run:
-   ```bash
-   docker build -f Dockerfile-local -t gyst-app .
-   ```
-2. Then run:
-   ```bash
-    docker run -p 8080:8080 gyst-app
-    ```
+Data flow in DDD with Graphql:
+
+1. Resolver with mapping
+2. UseCase with business logic
+3. Repository implemented in RepositoryAdapter for mapping between entity and domain object
+4. Jpa Repository to access DB

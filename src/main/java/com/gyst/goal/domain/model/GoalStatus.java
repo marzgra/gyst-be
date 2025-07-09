@@ -1,6 +1,6 @@
 package com.gyst.goal.domain.model;
 
 public enum GoalStatus {
-    PLANNED, IN_PROGRESS, DONE
+    CREATED, PLANNED, IN_PROGRESS, DONE
 }
 
