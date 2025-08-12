@@ -1,6 +1,4 @@
-package com.gyst.goal.domain.repository;
-
-import com.gyst.goal.domain.model.Goal;
+package com.gyst.goal.domain;
 
 import java.util.List;
 import java.util.Optional;

@@ -1,4 +1,4 @@
-package com.gyst.goal.domain.model;
+package com.gyst.goal.domain;
 
 public enum GoalType {
     YEAR,

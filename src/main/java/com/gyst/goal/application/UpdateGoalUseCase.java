@@ -1,10 +1,10 @@
 package com.gyst.goal.application;
 
 import com.gyst.exceptions.NotFoundException;
-import com.gyst.goal.domain.model.Goal;
-import com.gyst.goal.domain.model.GoalStatus;
-import com.gyst.goal.domain.model.GoalType;
-import com.gyst.goal.domain.repository.GoalRepository;
+import com.gyst.goal.domain.Goal;
+import com.gyst.goal.domain.GoalStatus;
+import com.gyst.goal.domain.GoalType;
+import com.gyst.goal.domain.GoalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -22,7 +22,7 @@ public class UpdateGoalUseCase {
         final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
         final LocalDate deadlineFormatted = LocalDate.parse(deadline, formatter);
         Goal goal = repository.findByIdAndUserId(goalId, userId)
-                .orElseThrow(() -> new NotFoundException("Goal"));
+                .orElseThrow(() -> new NotFoundException("Goal")); // todo exception per domain object?
 
         goal.update(title, description, deadlineFormatted, GoalType.valueOf(type), GoalStatus.valueOf(status));
         return repository.save(goal);

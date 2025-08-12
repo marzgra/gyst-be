@@ -1,9 +1,9 @@
 package com.gyst.goal.application;
 
-import com.gyst.goal.domain.model.Goal;
-import com.gyst.goal.domain.model.GoalStatus;
-import com.gyst.goal.domain.model.GoalType;
-import com.gyst.goal.domain.repository.GoalRepository;
+import com.gyst.goal.domain.Goal;
+import com.gyst.goal.domain.GoalStatus;
+import com.gyst.goal.domain.GoalType;
+import com.gyst.goal.domain.GoalRepository;
 import org.junit.Test;
 import org.mockito.Mockito;
 

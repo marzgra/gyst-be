@@ -3,7 +3,7 @@ package com.gyst.goal.presentation;
 import com.gyst.goal.application.CreateGoalUseCase;
 import com.gyst.goal.application.GetGoalsQueryUseCase;
 import com.gyst.goal.application.UpdateGoalUseCase;
-import com.gyst.goal.domain.model.Goal;
+import com.gyst.goal.domain.Goal;
 import lombok.RequiredArgsConstructor;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;

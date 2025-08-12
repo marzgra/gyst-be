@@ -1,6 +1,6 @@
-package com.gyst.user.infrastructure.entity;
+package com.gyst.user.infrastructure;
 
-import com.gyst.goal.infrastructure.entity.GoalEntity;
+import com.gyst.goal.infrastructure.GoalEntity;
 import jakarta.persistence.*;
 import lombok.*;
 

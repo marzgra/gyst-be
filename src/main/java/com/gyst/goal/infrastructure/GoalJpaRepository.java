@@ -1,6 +1,5 @@
-package com.gyst.goal.infrastructure.repository;
+package com.gyst.goal.infrastructure;
 
-import com.gyst.goal.infrastructure.entity.GoalEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.List;

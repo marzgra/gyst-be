@@ -1,8 +1,8 @@
-package com.gyst.goal.infrastructure.entity;
+package com.gyst.goal.infrastructure;
 
-import com.gyst.goal.domain.model.GoalStatus;
-import com.gyst.goal.domain.model.GoalType;
-import com.gyst.user.infrastructure.entity.UserEntity;
+import com.gyst.goal.domain.GoalStatus;
+import com.gyst.goal.domain.GoalType;
+import com.gyst.user.infrastructure.UserEntity;
 import jakarta.persistence.*;
 import lombok.*;
 

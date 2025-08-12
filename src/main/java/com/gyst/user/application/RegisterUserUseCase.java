@@ -1,7 +1,7 @@
 package com.gyst.user.application;
 
-import com.gyst.user.domain.model.User;
-import com.gyst.user.domain.repository.UserRepository;
+import com.gyst.user.domain.User;
+import com.gyst.user.domain.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

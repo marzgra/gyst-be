@@ -1,8 +1,8 @@
 package com.gyst;
 
-import com.gyst.goal.domain.model.Goal;
-import com.gyst.goal.domain.model.GoalStatus;
-import com.gyst.goal.domain.model.GoalType;
+import com.gyst.goal.domain.Goal;
+import com.gyst.goal.domain.GoalStatus;
+import com.gyst.goal.domain.GoalType;
 
 import java.time.LocalDate;
 

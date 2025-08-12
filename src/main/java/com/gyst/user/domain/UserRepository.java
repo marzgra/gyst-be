@@ -1,6 +1,4 @@
-package com.gyst.user.domain.repository;
-
-import com.gyst.user.domain.model.User;
+package com.gyst.user.domain;
 
 import java.util.Optional;
 

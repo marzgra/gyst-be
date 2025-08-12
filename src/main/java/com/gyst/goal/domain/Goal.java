@@ -1,4 +1,4 @@
-package com.gyst.goal.domain.model;
+package com.gyst.goal.domain;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

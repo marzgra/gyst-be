@@ -1,6 +1,5 @@
-package com.gyst.user.infrastructure.repository;
+package com.gyst.user.infrastructure;
 
-import com.gyst.user.infrastructure.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.util.Optional;

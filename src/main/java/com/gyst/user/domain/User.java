@@ -1,4 +1,4 @@
-package com.gyst.user.domain.model;
+package com.gyst.user.domain;
 
 import lombok.Builder;
 import lombok.Value;

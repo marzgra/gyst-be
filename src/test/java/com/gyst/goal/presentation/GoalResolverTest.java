@@ -4,7 +4,7 @@ import com.gyst.config.GraphQlConfig;
 import com.gyst.goal.application.CreateGoalUseCase;
 import com.gyst.goal.application.GetGoalsQueryUseCase;
 import com.gyst.goal.application.UpdateGoalUseCase;
-import com.gyst.goal.domain.model.Goal;
+import com.gyst.goal.domain.Goal;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;

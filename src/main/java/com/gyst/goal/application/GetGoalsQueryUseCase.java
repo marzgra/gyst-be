@@ -1,7 +1,7 @@
 package com.gyst.goal.application;
 
-import com.gyst.goal.domain.model.Goal;
-import com.gyst.goal.domain.repository.GoalRepository;
+import com.gyst.goal.domain.Goal;
+import com.gyst.goal.domain.GoalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 

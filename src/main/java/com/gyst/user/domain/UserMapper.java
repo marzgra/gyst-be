@@ -1,7 +1,6 @@
-package com.gyst.user.domain.mapper;
+package com.gyst.user.domain;
 
-import com.gyst.user.domain.model.User;
-import com.gyst.user.infrastructure.entity.UserEntity;
+import com.gyst.user.infrastructure.UserEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")

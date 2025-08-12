@@ -1,10 +1,8 @@
-package com.gyst.goal.infrastructure.adapter;
+package com.gyst.goal.infrastructure;
 
-import com.gyst.goal.domain.mapper.GoalMapper;
-import com.gyst.goal.domain.model.Goal;
-import com.gyst.goal.domain.repository.GoalRepository;
-import com.gyst.goal.infrastructure.entity.GoalEntity;
-import com.gyst.goal.infrastructure.repository.GoalJpaRepository;
+import com.gyst.goal.domain.GoalMapper;
+import com.gyst.goal.domain.Goal;
+import com.gyst.goal.domain.GoalRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 

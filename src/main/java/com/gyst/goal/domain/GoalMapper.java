@@ -1,7 +1,6 @@
-package com.gyst.goal.domain.mapper;
+package com.gyst.goal.domain;
 
-import com.gyst.goal.domain.model.Goal;
-import com.gyst.goal.infrastructure.entity.GoalEntity;
+import com.gyst.goal.infrastructure.GoalEntity;
 import org.mapstruct.Mapper;
 
 @Mapper(componentModel = "spring")
