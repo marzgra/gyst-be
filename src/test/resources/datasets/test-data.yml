@@ -1,0 +1,13 @@
+users:
+  - userId: 1
+    email: "test@test.com"
+    name: "Test User"
+
+goals:
+  - goalId: 1
+    userId: 1
+    title: "Test Goal 1"
+    description: "Description 1"
+    deadline: "2024-12-31"
+    type: "DAILY"
+    status: "CREATED"

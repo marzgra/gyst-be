@@ -28,6 +28,8 @@
         <graphql-test.version>1.3.5</graphql-test.version>
         <spring-security-test.version>6.4.5</spring-security-test.version>
         <testcontainers.version>1.20.6</testcontainers.version>
+        <db-unit.version>2.7.3</db-unit.version>
+        <rider-spring.version>1.41.0</rider-spring.version>
     </properties>
     <dependencies>
         <dependency>
@@ -161,6 +163,18 @@
             <groupId>org.testcontainers</groupId>
             <artifactId>postgresql</artifactId>
             <version>${testcontainers.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>${db-unit.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.github.database-rider</groupId>
+            <artifactId>rider-spring</artifactId>
+            <version>${rider-spring.version}</version>
             <scope>test</scope>
         </dependency>
     </dependencies>

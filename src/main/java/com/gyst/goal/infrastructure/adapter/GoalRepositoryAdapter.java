@@ -26,12 +26,12 @@ public class GoalRepositoryAdapter implements GoalRepository {
 
     @Override
     public Optional<Goal> findByIdAndUserId(Long id, Long userId) {
-        return jpa.findByIdAndUserId(id, userId).map(mapper::toDomain);
+        return jpa.findByGoalIdAndUserUserId(id, userId).map(mapper::toDomain);
     }
 
     @Override
     public List<Goal> findByUserId(Long userId) {
-        return jpa.findByUserId(userId).stream()
+        return jpa.findByUserUserId(userId).stream()
                 .map(mapper::toDomain)
                 .toList();
     }
