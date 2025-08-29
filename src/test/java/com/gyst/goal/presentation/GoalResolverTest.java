@@ -44,9 +44,6 @@ public class GoalResolverTest {
         Mockito.when(createGoalUseCase.createGoal(USER_ID, GOAL_NAME, GOAL_DESC, GOAL_DEADLINE, GOAL_TYPE))
                 .thenReturn(BASE_GOAL);
 
-        System.out.println("##### from mock: ");
-        System.out.println(BASE_GOAL.toString());
-
         // when + then
         graphQlTester.document("""
                         mutation {
@@ -55,9 +52,9 @@ public class GoalResolverTest {
                                 title: "%s",\s
                                 description: "%s",\s
                                 deadline: "%s",\s
-                                type: "%s"
+                                type: %s
                             ) {
-                                id
+                                goalId
                                 userId
                                 title
                                 description
@@ -70,8 +67,6 @@ public class GoalResolverTest {
                 .execute()
                 .path("createGoal")
                 .entity(Goal.class).satisfies(goal -> {
-                    System.out.println("##### from test: ");
-                    System.out.println(goal.toString());
                     Assertions.assertNotNull(goal);
                     Assertions.assertEquals(GOAL_ID, goal.getGoalId());
                     Assertions.assertEquals(GOAL_NAME, goal.getTitle());
