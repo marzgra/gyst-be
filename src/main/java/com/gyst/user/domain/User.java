@@ -15,7 +15,7 @@ import lombok.Value;
 @Value
 @Builder
 public class User {
-    Long id;
+    Long userId;
     String email;
     String name;
 }

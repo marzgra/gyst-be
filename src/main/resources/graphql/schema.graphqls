@@ -9,16 +9,32 @@ type Mutation {
     createUser(email: String!, name: String!): Long!
 
     #goal
-    createGoal(userId: Long!, title: String!, description: String, deadline: String, type: String!): Goal!
-    updateGoal(goalId: Long!, userId: Long!, title: String!, description: String, deadline: String, type: String!, status: String!): Goal!
+    createGoal(userId: Long!, title: String!, description: String, deadline: String, type: GoalType!): Goal!
+    updateGoal(goalId: Long!, userId: Long!, title: String!, description: String, deadline: String, type: GoalType!, status: GoalStatus!): Goal!
 }
 
 type Goal {
-    id: Long!
+    goalId: Long!
     userId: Long!
     title: String!
     description: String
     deadline: String
     type: String!
     status: String!
+}
+
+enum GoalType {
+    YEAR,
+    QUARTER,
+    MONTH,
+    WEEK,
+    DAY,
+    INBOX
+}
+
+enum GoalStatus {
+    CREATED,
+    PLANNED,
+    IN_PROGRESS,
+    DONE
 }

@@ -15,7 +15,7 @@ public class RegisterUserUseCaseTest {
     public void shouldRegisterUserAndReturnId() {
         // given
         UserRepository mockRepo = Mockito.mock(UserRepository.class);
-        User savedUser = User.builder().id(USER_ID).name(USER_NAME).email(USER_EMAIL).build();
+        User savedUser = User.builder().userId(USER_ID).name(USER_NAME).email(USER_EMAIL).build();
         Mockito.when(mockRepo.save(any(User.class))).thenReturn(savedUser);
 
         RegisterUserUseCase useCase = new RegisterUserUseCase(mockRepo);

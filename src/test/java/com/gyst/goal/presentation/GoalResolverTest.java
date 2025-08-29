@@ -73,7 +73,7 @@ public class GoalResolverTest {
                     System.out.println("##### from test: ");
                     System.out.println(goal.toString());
                     Assertions.assertNotNull(goal);
-                    Assertions.assertEquals(GOAL_ID, goal.getId());
+                    Assertions.assertEquals(GOAL_ID, goal.getGoalId());
                     Assertions.assertEquals(GOAL_NAME, goal.getTitle());
                     Assertions.assertEquals(GOAL_DESC, goal.getDescription());
                     Assertions.assertEquals(GOAL_DEADLINE, goal.getDeadline());

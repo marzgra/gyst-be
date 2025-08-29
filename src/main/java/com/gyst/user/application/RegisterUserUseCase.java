@@ -20,6 +20,6 @@ public class RegisterUserUseCase {
                 .name(name)
                 .build();
         var savedUser = userRepository.save(user);
-        return savedUser.getId();
+        return savedUser.getUserId();
     }
 }

@@ -11,10 +11,10 @@ spring:
     database-platform: org.hibernate.dialect.PostgreSQLDialect
     hibernate:
       ddl-auto: create-drop
-    show-sql: true
-    properties:
-      hibernate:
-        format_sql: true
+#    show-sql: true
+#    properties:
+#      hibernate:
+#        format_sql: true
 
 graphql:
   servlet:
@@ -23,7 +23,7 @@ graphql:
 
 logging:
   level:
-    org.springframework: INFO
+    org.springframework: DEBUG
 
 springdoc:
   api-docs:

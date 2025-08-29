@@ -7,8 +7,6 @@ import com.gyst.goal.domain.GoalRepository;
 import org.junit.Test;
 import org.mockito.Mockito;
 
-import java.time.LocalDate;
-
 import static com.gyst.TestConstants.*;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.ArgumentMatchers.any;
@@ -23,11 +21,11 @@ public class CreateGoalUseCaseTest {
     public void shouldCreateGoal() {
         // given
         Goal savedGoal = Goal.builder()
-                .id(GOAL_ID)
+                .goalId(GOAL_ID)
                 .userId(USER_ID)
                 .title(GOAL_NAME)
                 .description(GOAL_DESC)
-                .deadline(LocalDate.parse(GOAL_DEADLINE))
+                .deadline(GOAL_DEADLINE)
                 .type(GoalType.valueOf(GOAL_TYPE))
                 .status(GoalStatus.valueOf(GOAL_STATUS))
                 .build();

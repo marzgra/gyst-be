@@ -4,8 +4,8 @@ import java.util.Optional;
 
 /**
  * Defines contract for storing and retrieving users.
- * Independent from technology (e.g., database, in-memory, etc.)
- * Domain says what it want, not how it works 0 implementation will come in later.
+ * Independent of technology (e.g., database, in-memory, etc.)
+ * Domain says what it wants, not how it works 0 implementation will come in later.
  */
 
 public interface UserRepository {

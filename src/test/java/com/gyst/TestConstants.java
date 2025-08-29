@@ -4,8 +4,6 @@ import com.gyst.goal.domain.Goal;
 import com.gyst.goal.domain.GoalStatus;
 import com.gyst.goal.domain.GoalType;
 
-import java.time.LocalDate;
-
 public class TestConstants {
     public static final Long USER_ID = 42L;
     public static final String USER_NAME = "Alice";
@@ -24,21 +22,21 @@ public class TestConstants {
     public static final String GOAL_NEW_STATUS = "PLANNED";
 
     public static final Goal BASE_GOAL = Goal.builder()
-            .id(GOAL_ID)
+            .goalId(GOAL_ID)
             .userId(USER_ID)
             .title(GOAL_NAME)
             .description(GOAL_DESC)
-            .deadline(LocalDate.parse(GOAL_DEADLINE))
+            .deadline(GOAL_DEADLINE)
             .type(GoalType.valueOf(GOAL_TYPE))
             .status(GoalStatus.valueOf(GOAL_STATUS))
             .build();
 
     public static final Goal UPDATED_GOAL = Goal.builder()
-            .id(GOAL_ID)
+            .goalId(GOAL_ID)
             .userId(USER_ID)
             .title(GOAL_NEW_NAME)
             .description(GOAL_NEW_DESC)
-            .deadline(LocalDate.parse(GOAL_NEW_DEADLINE))
+            .deadline(GOAL_NEW_DEADLINE)
             .type(GoalType.valueOf(GOAL_NEW_TYPE))
             .status(GoalStatus.valueOf(GOAL_NEW_STATUS))
             .build();
