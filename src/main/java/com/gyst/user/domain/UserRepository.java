@@ -1,0 +1,17 @@
+package com.gyst.user.domain;
+
+import java.util.Optional;
+
+/**
+ * Defines contract for storing and retrieving users.
+ * Independent of technology (e.g., database, in-memory, etc.)
+ * Domain says what it wants, not how it works 0 implementation will come in later.
+ */
+
+public interface UserRepository {
+    User save(User user);
+
+    Optional<User> findById(Long id);
+
+    Optional<User> findByEmail(String email);
+}
