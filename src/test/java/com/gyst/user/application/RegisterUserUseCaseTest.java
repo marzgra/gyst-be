@@ -21,10 +21,13 @@ public class RegisterUserUseCaseTest {
         RegisterUserUseCase useCase = new RegisterUserUseCase(mockRepo);
 
         // when
-        Long result = useCase.register(USER_EMAIL, USER_NAME);
+        User result = useCase.register(USER_EMAIL, USER_NAME);
 
         // then
-        assertEquals(USER_ID, result);
+        assertNotNull(result);
+        assertEquals(USER_ID, result.getUserId());
+        assertEquals(USER_NAME, result.getName());
+        assertEquals(USER_EMAIL, result.getEmail());
     }
 }
 

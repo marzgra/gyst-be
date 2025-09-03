@@ -27,7 +27,7 @@
 
         <graphql-test.version>1.3.5</graphql-test.version>
         <spring-security-test.version>6.4.5</spring-security-test.version>
-        <testcontainers.version>1.20.6</testcontainers.version>
+        <testcontainers.version>1.21.0</testcontainers.version>
         <db-unit.version>2.7.3</db-unit.version>
         <rider-spring.version>1.41.0</rider-spring.version>
     </properties>
@@ -133,6 +133,11 @@
             <groupId>org.springframework.graphql</groupId>
             <artifactId>spring-graphql-test</artifactId>
             <version>${graphql-test.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-webflux</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>

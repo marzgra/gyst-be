@@ -3,6 +3,7 @@ package com.gyst;
 import com.gyst.goal.domain.Goal;
 import com.gyst.goal.domain.GoalStatus;
 import com.gyst.goal.domain.GoalType;
+import com.gyst.user.domain.User;
 
 public class TestConstants {
     public static final Long USER_ID = 42L;
@@ -39,5 +40,11 @@ public class TestConstants {
             .deadline(GOAL_NEW_DEADLINE)
             .type(GoalType.valueOf(GOAL_NEW_TYPE))
             .status(GoalStatus.valueOf(GOAL_NEW_STATUS))
+            .build();
+
+    public static final User USER = User.builder()
+            .userId(USER_ID)
+            .name(USER_NAME)
+            .email(USER_EMAIL)
             .build();
 }

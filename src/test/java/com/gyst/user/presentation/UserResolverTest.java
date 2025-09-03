@@ -1,7 +1,8 @@
 package com.gyst.user.presentation;
 
-import com.gyst.user.application.RegisterUserUseCase;
 import com.gyst.config.GraphQlConfig;
+import com.gyst.user.application.RegisterUserUseCase;
+import com.gyst.user.domain.User;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
@@ -9,15 +10,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.graphql.GraphQlTest;
 import org.springframework.context.annotation.Import;
 import org.springframework.graphql.test.tester.GraphQlTester;
-import org.springframework.test.annotation.DirtiesContext;
 import org.springframework.test.context.bean.override.mockito.MockitoBean;
 
 import static com.gyst.TestConstants.*;
-import static org.springframework.test.annotation.DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD;
 
 @GraphQlTest(UserResolver.class)
 @Import(GraphQlConfig.class)
-@DirtiesContext(classMode = AFTER_EACH_TEST_METHOD)
 class UserResolverTest {
 
     @Autowired
@@ -30,18 +28,26 @@ class UserResolverTest {
     void shouldReturnUserId() {
         // given
         Mockito.when(registerUserUseCase.register(USER_EMAIL, USER_NAME))
-                .thenReturn(USER_ID);
+                .thenReturn(USER);
 
         // when + then
         graphQlTester.document("""
                         mutation {
-                            createUser(name: "%s", email: "%s")
+                            createUser(name: "%s", email: "%s") {
+                                userId
+                                name
+                                email
+                            }
                         }
                         """.formatted(USER_NAME, USER_EMAIL))
                 .execute()
                 .path("createUser")
-                .entity(Long.class)
-                .satisfies(id -> Assertions.assertEquals(USER_ID, id));
+                .entity(User.class)
+                .satisfies(user -> {
+                    Assertions.assertEquals(USER_ID, user.getUserId());
+                    Assertions.assertEquals(USER_NAME, user.getName());
+                    Assertions.assertEquals(USER_EMAIL, user.getEmail());
+                });
     }
 }
 

@@ -6,11 +6,17 @@ type Query {
 
 type Mutation {
     #user
-    createUser(email: String!, name: String!): Long!
+    createUser(email: String!, name: String!): User!
 
     #goal
     createGoal(userId: Long!, title: String!, description: String, deadline: String, type: GoalType!): Goal!
     updateGoal(goalId: Long!, userId: Long!, title: String!, description: String, deadline: String, type: GoalType!, status: GoalStatus!): Goal!
+}
+
+type User {
+    userId: Long!
+    email: String!
+    name: String!
 }
 
 type Goal {

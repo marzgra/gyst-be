@@ -14,12 +14,11 @@ public class RegisterUserUseCase {
 
     private final UserRepository userRepository;
 
-    public Long register(String email, String name) {
+    public User register(String email, String name) {
         var user = User.builder()
                 .email(email)
                 .name(name)
                 .build();
-        var savedUser = userRepository.save(user);
-        return savedUser.getUserId();
+        return userRepository.save(user);
     }
 }

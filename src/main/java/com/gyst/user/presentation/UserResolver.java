@@ -1,6 +1,7 @@
 package com.gyst.user.presentation;
 
 import com.gyst.user.application.RegisterUserUseCase;
+import com.gyst.user.domain.User;
 import lombok.RequiredArgsConstructor;
 import org.springframework.graphql.data.method.annotation.Argument;
 import org.springframework.graphql.data.method.annotation.MutationMapping;
@@ -16,7 +17,7 @@ public class UserResolver {
     private final RegisterUserUseCase registerUserUseCase;
 
     @MutationMapping
-    public Long createUser(@Argument String email, @Argument String name) {
+    public User createUser(@Argument String email, @Argument String name) {
         return registerUserUseCase.register(email, name);
     }
 }
