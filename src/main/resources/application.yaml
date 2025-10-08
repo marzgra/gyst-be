@@ -23,7 +23,7 @@ graphql:
 
 logging:
   level:
-    org.springframework: DEBUG
+    org.springframework: INFO
 
 springdoc:
   api-docs:
