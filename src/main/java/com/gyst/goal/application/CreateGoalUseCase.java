@@ -12,13 +12,13 @@ public class CreateGoalUseCase {
 
     private final GoalRepository repository;
 
-    public Goal createGoal(Long userId, String title, String description, String deadline, String type) {
+    public Goal createGoal(Long userId, String title, String description, String deadline, GoalType type) {
         Goal goal = new Goal(
                 userId,
                 title,
                 description,
                 deadline,
-                GoalType.valueOf(type)
+                type
         );
         return repository.save(goal);
     }

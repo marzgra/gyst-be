@@ -1,8 +1,8 @@
 package com.gyst.goal.domain;
 
+import com.gyst.goal.application.commands.UpdateGoalCommand;
 import com.gyst.goal.infrastructure.GoalEntity;
-import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
+import org.mapstruct.*;
 
 @Mapper(componentModel = "spring")
 public interface GoalMapper {
@@ -13,4 +13,8 @@ public interface GoalMapper {
     @Mapping(source = "deadline", target = "deadline", dateFormat = "yyyy-MM-dd")
     @Mapping(source = "userId", target="user.userId")
     GoalEntity toEntity(Goal goal);
+
+    @BeanMapping(nullValuePropertyMappingStrategy = NullValuePropertyMappingStrategy.IGNORE)
+    Goal updateGoalFromCommand(UpdateGoalCommand command, @MappingTarget Goal goal);
+
 }
