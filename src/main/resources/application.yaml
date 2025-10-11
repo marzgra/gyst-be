@@ -7,8 +7,8 @@ spring:
       mapping: /graphql
       enabled: true
     cors:
-      allowed-origins: http://localhost:3000
-      allowed-methods: GET,POST,OPTIONS
+      allowed-origins: "*"
+      allowed-methods: GET,POST,OPTIONS,DELETE,PUT
   datasource:
     url: jdbc:postgresql://${DATABASE_HOST}:${DATABASE_PORT}/${DATABASE_NAME}
     username: ${DATABASE_USERNAME}
