@@ -6,22 +6,23 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
+import org.mockito.Mockito;
 import org.mockito.MockitoAnnotations;
 
 import java.util.Collections;
 import java.util.List;
 
+import static java.util.Collections.emptyList;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 import static org.mockito.Mockito.when;
 
 class GetGoalsQueryUseCaseTest {
 
-    @Mock
-    private GoalRepository goalRepository;
 
-    @InjectMocks
-    private GetGoalsQueryUseCase getGoalsQueryUseCase;
+    private final GoalRepository goalRepository = Mockito.mock(GoalRepository.class);
+
+    private final GetGoalsQueryUseCase getGoalsQueryUseCase = new GetGoalsQueryUseCase(goalRepository);
 
     @BeforeEach
     void setUp() {
@@ -46,21 +47,17 @@ class GetGoalsQueryUseCaseTest {
     void shouldReturnEmptyListForNonExistentUserId() {
         //given
         Long userId = 999L;
-        when(goalRepository.findByUserId(userId)).thenReturn(Collections.emptyList());
+        when(goalRepository.findByUserId(userId)).thenReturn(emptyList());
 
         //when
         List<Goal> result = getGoalsQueryUseCase.getGoalsByUserId(userId);
 
         //then
-        assertEquals(Collections.emptyList(), result);
+        assertEquals(emptyList(), result);
     }
 
     @Test
     void shouldThrowExceptionForNullUserId() {
-        // given
-        Long userId = null;
-
-        // when & then
-        assertThrows(IllegalArgumentException.class, () -> getGoalsQueryUseCase.getGoalsByUserId(userId));
+        assertThrows(IllegalArgumentException.class, () -> getGoalsQueryUseCase.getGoalsByUserId(null));
     }
 }

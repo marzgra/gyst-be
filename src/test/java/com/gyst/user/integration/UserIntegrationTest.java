@@ -21,7 +21,7 @@ class UserIntegrationTest extends TestContainersConfig {
     private GraphQlTester graphQlTester;
 
     @Test
-    void shouldCreateUserAndReturnUserData() throws IOException {
+    void shouldCreateUserAndReturnUserData() {
         graphQlTester.documentName("createUser")
                 .execute()
                 .path("data.createUser.userId").entity(Long.class).satisfies(Assertions::nonNull)

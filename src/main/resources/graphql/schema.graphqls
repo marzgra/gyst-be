@@ -1,7 +1,9 @@
 scalar Long
 
 type Query {
-    dummyQuery: String
+    # goal
+    getUsersGoals(userId: Long!): [Goal!]!
+    getGoalById(goalId: Long!): Goal
 }
 
 type Mutation {
@@ -10,7 +12,7 @@ type Mutation {
 
     #goal
     createGoal(userId: Long!, title: String!, description: String, deadline: String, type: GoalType!): Goal!
-    updateGoal(goalId: Long!, userId: Long!, title: String!, description: String, deadline: String, type: GoalType!, status: GoalStatus!): Goal!
+    updateGoal(goalId: Long!, userId: Long!, change: UpdateGoalInput): Goal!
 }
 
 type User {
@@ -27,6 +29,14 @@ type Goal {
     deadline: String
     type: String!
     status: String!
+}
+
+input UpdateGoalInput {
+    title: String
+    description: String
+    deadline: String
+    type: GoalType
+    status: GoalStatus
 }
 
 enum GoalType {

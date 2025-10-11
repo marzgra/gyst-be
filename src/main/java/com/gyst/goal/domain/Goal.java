@@ -26,24 +26,4 @@ public class Goal {
         this.type = type;
         this.status = GoalStatus.CREATED;
     }
-
-    public void update(String title, String description, String deadline, GoalType type, GoalStatus status) {
-        this.title = title;
-        this.description = description;
-        this.deadline = deadline;
-        this.type = type;
-        this.status = status;
-    }
-
-    public void markAsInProgress() { this.status = GoalStatus.IN_PROGRESS; }
-    public void markAsDone() { this.status = GoalStatus.DONE; }
-
-
-    public String getType() {
-        return type != null ? type.name() : null;
-    }
-
-    public String getStatus() {
-        return status != null ? status.name() : null;
-    }
 }

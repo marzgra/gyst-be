@@ -28,7 +28,7 @@ class UserResolverTest {
     void shouldReturnUserId() {
         // given
         Mockito.when(registerUserUseCase.register(USER_EMAIL, USER_NAME))
-                .thenReturn(USER);
+                .thenReturn(USER_WITH_ID);
 
         // when + then
         graphQlTester.document("""
